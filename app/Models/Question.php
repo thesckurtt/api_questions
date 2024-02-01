@@ -18,4 +18,7 @@ class Question extends Model
         'question_alternative_correct',
     ];
     use HasFactory;
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }
