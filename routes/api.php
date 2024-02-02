@@ -21,5 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::controller(ApiController::class)->group(function(){
     Route::get('/random', 'random'); // return random questions
-    Route::get('/question/{id}', 'onlyQuestion'); // return question by ID
+    Route::get('/question/{id}', 'onlyQuestion')->where('id', '[0-9]'); // return question by ID
 });
