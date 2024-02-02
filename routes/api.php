@@ -20,6 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::controller(ApiController::class)->group(function(){
-    Route::get('/ramdom', 'random'); // return random questions
+    Route::get('/random', 'random'); // return random questions
     Route::get('/question/{id}', 'onlyQuestion'); // return question by ID
 });

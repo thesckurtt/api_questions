@@ -16,6 +16,9 @@ class QuestionFactory extends Factory
      */
     public function definition(): array
     {
+        $alternatives = ['a', 'b', 'c', 'd'];
+        $alternative_random = $alternatives[rand(0, 3)];
+
         return [
         'user_id' => 1,
         'question_name' => "Lorem Ipsum Dolor",
@@ -24,7 +27,7 @@ class QuestionFactory extends Factory
         'question_alternative_02' =>  fake()->text() . "?",
         'question_alternative_03' => fake()->text() . "?",
         'question_alternative_04' => fake()->text() . "?",
-        'question_alternative_correct' => 2,
+        'question_alternative_correct' => $alternative_random,
         ];
     }
 }

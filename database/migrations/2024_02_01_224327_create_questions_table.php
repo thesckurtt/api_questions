@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('question_alternative_02');
             $table->string('question_alternative_03');
             $table->string('question_alternative_04');
-            $table->integer('question_alternative_correct');
+            $table->char('question_alternative_correct');
             $table->timestamps();
         });
     }
