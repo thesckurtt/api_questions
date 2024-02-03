@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Models\Question;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -35,4 +36,9 @@ Route::middleware([
 
 Route::middleware('auth')->prefix('/dashboard')->controller(DashboardController::class)->group(function(){
     Route::get('/', 'indexDashboard')->name('dashboard.index');
+});
+
+Route::get('/teste', function(){
+    $users = Question::with('user')->where('user_id', auth()->user()->id)->paginate(1);
+    // dd($users->links()->elements);
 });
