@@ -20,7 +20,7 @@ class QuestionFactory extends Factory
         $alternative_random = $alternatives[rand(0, 3)];
 
         return [
-        'user_id' => 1,
+        'user_id' => 2,
         'question_name' => "Lorem Ipsum Dolor",
         'question_text' => fake()->text() . "?",
         'question_alternative_01' => fake()->text() . "?",

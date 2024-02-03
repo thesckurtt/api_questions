@@ -379,28 +379,7 @@
                     {{-- Main Content of dashboard here --}}
                     <div class="row">
                         <div class="col-sm">
-                            <table class="table">
-                                <thead class="thead-dark">
-                                    <tr>
-                                        <th scope="col">#ID</th>
-                                        <th scope="col">Título da pergunta</th>
-                                        <th scope="col">Data de criação</th>
-                                        <th scope="col">Ações</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>What lorem ipsum dolor sit amet?</td>
-                                        <td>09/03/2023</td>
-                                        <td>
-                                            <button type="button" class="btn btn-success"><i class="fa-solid fa-circle-info"></i></button>
-                                            <button type="button" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></button>
-                                            <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            @livewire('tableofquestion')
                         </div>
                     </div>
                 </div>
