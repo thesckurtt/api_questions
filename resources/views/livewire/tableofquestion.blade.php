@@ -26,15 +26,17 @@
             @endforeach
         </tbody>
     </table>
-    {{-- {{ dd($questions->links()->paginator->currentPage())}} --}}
+
+    @if ($total_questions > $questions_per_page)
     <nav aria-label="Page navigation example">
         <ul class="pagination">
             {{-- <li class="page-item"><a class="page-link" href="#">Previous</a></li> --}}
             @foreach ($paginator[0] as $key => $page)
-                <li class="page-item {{ $key == $current_page ? 'active' : '' }}" data-page-id="{{$key}}"><a class="page-link" href="{{$page}}">{{$key}}</a></li>
+            <li class="page-item {{ $key == $current_page ? 'active' : '' }}" data-page-id="{{$key}}"><a class="page-link" href="{{$page}}">{{$key}}</a></li>
             @endforeach
             {{-- <li class="page-item"><a class="page-link" href="#">Next</a></li> --}}
         </ul>
     </nav>
+    @endif
 </div>
 

@@ -14,13 +14,18 @@ class Tableofquestion extends Component
 
     public function render()
     {
-        $questions = Question::with('user')->where('user_id', auth()->user()->id)->paginate(2);
+        $questions_per_page = 5;
+        $questions = Question::with('user')->where('user_id', auth()->user()->id)->paginate($questions_per_page);
         $paginator = $questions->links()->elements;
         $current_page = $questions->links()->paginator->currentPage();
+        $total_questions = $questions->links()->paginator->total();
+
         return view('livewire.tableofquestion', [
             'questions' => $questions,
             'paginator' => $paginator,
-            'current_page' => $current_page
+            'current_page' => $current_page,
+            'questions_per_page' => $questions_per_page,
+            'total_questions' => $total_questions
         ]);
     }
 }
