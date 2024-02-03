@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Models\Question;
 use App\Models\User;
+use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -17,10 +18,10 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 |
 */
 
-Route::middleware('auth')->get('/teste', function () {
-    $user = User::with('questions')->find(1);
-    dd($user);
-});
+// Route::middleware('auth')->get('/teste', function () {
+//     $user = User::with('questions')->find(1);
+//     dd($user);
+// });
 
 /*
 Route::middleware([
@@ -36,9 +37,9 @@ Route::middleware([
 
 Route::middleware('auth')->prefix('/dashboard')->controller(DashboardController::class)->group(function(){
     Route::get('/', 'indexDashboard')->name('dashboard.index');
+
+    // Rota para testes
+    Route::get('/teste', 'teste');
 });
 
-Route::get('/teste', function(){
-    $users = Question::with('user')->where('user_id', auth()->user()->id)->paginate(1);
-    // dd($users->links()->elements);
-});
+
