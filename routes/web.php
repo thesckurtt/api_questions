@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +32,7 @@ Route::middleware([
     })->name('dashboard');
 });
 */
+
+Route::middleware('auth')->prefix('/dashboard')->controller(DashboardController::class)->group(function(){
+    Route::get('/', 'indexDashboard')->name('dashboard.index');
+});
