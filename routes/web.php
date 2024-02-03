@@ -14,7 +14,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/teste', function () {
+Route::middleware('auth')->get('/teste', function () {
     $user = User::with('questions')->find(1);
     dd($user);
 });
+
+/*
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
+*/
