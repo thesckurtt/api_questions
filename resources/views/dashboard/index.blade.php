@@ -333,7 +333,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->name}}</span>
                                 <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
@@ -391,8 +391,8 @@
                                 <tbody>
                                     <tr>
                                         <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
+                                        <td>What lorem ipsum dolor sit amet?</td>
+                                        <td>09/03/2023</td>
                                         <td>
                                             <button type="button" class="btn btn-success"><i class="fa-solid fa-circle-info"></i></button>
                                             <button type="button" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></button>
