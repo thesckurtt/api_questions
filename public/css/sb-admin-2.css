@@ -11279,3 +11279,13 @@ footer.sticky-footer .copyright {
 body.sidebar-toggled footer.sticky-footer {
   width: 100%;
 }
+
+/* Add After */
+
+.slug-dashboard{
+    font-weight: 800;
+}
+.sub-slug-dashboard{
+    opacity: 0.4;
+    font-weight: 600;
+}

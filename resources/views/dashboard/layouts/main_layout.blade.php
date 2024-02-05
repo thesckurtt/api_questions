@@ -20,7 +20,7 @@
         rel="stylesheet">
 
     {{-- Custom styles for this template --}}
-    <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/sb-admin-2.css') }}" rel="stylesheet">
 
     {{-- Select 2 --}}
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
@@ -185,6 +185,7 @@
                                 <!-- Counter - Alerts -->
                                 <span class="badge badge-danger badge-counter">3+</span>
                             </a>
+                            
                             <!-- Dropdown - Alerts -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="alertsDropdown">
