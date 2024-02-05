@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Question;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
     public function indexDashboard(Request $request){
-        // echo "hello world";
-        // echo "hi";
         // dd(auth()->user()->with('questions')->get());
         // $questions = auth()->user()->with('questions')->get();
         $questions = auth()->user()->questions;
@@ -19,8 +19,13 @@ class DashboardController extends Controller
         ]);
     }
 
+    public function registerQuestion(){
+        return view('dashboard.register_question');
+    }
     public function teste(Request $request){
-        echo "hi";
-        dd($request->query('paginate'));
+        $user = auth()->user()->questions;
+        dd($user->find(22)->delete());
+        // echo "hi";
+        // dd($request->query('paginate'));
     }
 }

@@ -19,7 +19,11 @@ class Question extends Model
     ];
     use HasFactory;
     public function user(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class)->where(function($query){
+            if(auth()->check()){
+                $query->where('user_id', auth()->user()->id);
+            }
+        });
     }
     public function getDateAttribute(){
         return ($this->created_at)->format('d/m/Y');

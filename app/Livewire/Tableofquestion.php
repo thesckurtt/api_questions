@@ -12,10 +12,16 @@ class Tableofquestion extends Component
 {
     use WithPagination;
 
+    public function deleteQuestion($question_id){
+        $user = auth()->user()->questions;
+        $user->find($question_id)->delete();
+    }
+
+
     public function render()
     {
         $questions_per_page = 5;
-        $questions = Question::with('user')->where('user_id', auth()->user()->id)->paginate($questions_per_page);
+        $questions = auth()->user()->questions()->paginate($questions_per_page);
         $paginator = $questions->links()->elements;
         $current_page = $questions->links()->paginator->currentPage();
         $total_questions = $questions->links()->paginator->total();

@@ -19,7 +19,7 @@
                                 class="fa-solid fa-circle-info"></i></a>
                         <a href="##" class="btn btn-warning px-4" title="Editar"><i
                                 class="fa-solid fa-pen-to-square"></i></a>
-                        <a href="##" class="btn btn-danger px-4" title="Excluir"><i
+                        <a href="##" class="btn btn-danger px-4" wire:click='deleteQuestion({{$question->id}})' title="Excluir"><i
                                 class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr>
