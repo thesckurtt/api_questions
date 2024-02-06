@@ -41,7 +41,7 @@ Route::middleware('auth')->prefix('/dashboard')->controller(DashboardController:
     Route::get('/atualizar/{id}', 'updateQuestion')->name('dashboard.updateQuestion');
 
     // Rota para testes
-    Route::get('/teste', 'teste');
+    Route::get('/teste/{id}', 'teste');
 });
 
 

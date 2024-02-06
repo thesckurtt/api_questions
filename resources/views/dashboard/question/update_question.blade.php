@@ -2,7 +2,9 @@
 @section('content')
     <div class="row">
         <div class="col-sm">
-            {{-- @livewire('tableofquestion') --}}
+            @livewire('updateQuestionForm', [
+                'request' => $request
+            ])
         </div>
     </div>
 @endsection
