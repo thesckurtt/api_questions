@@ -38,6 +38,7 @@ Route::middleware([
 Route::middleware('auth')->prefix('/dashboard')->controller(DashboardController::class)->group(function(){
     Route::get('/', 'indexDashboard')->name('dashboard.index');
     Route::get('/cadastrar', 'registerQuestion')->name('dashboard.registerQuestion');
+    Route::get('/atualizar/{id}', 'updateQuestion')->name('dashboard.updateQuestion');
 
     // Rota para testes
     Route::get('/teste', 'teste');

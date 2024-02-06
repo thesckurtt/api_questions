@@ -20,11 +20,22 @@ class DashboardController extends Controller
     }
 
     public function registerQuestion(){
-        return view('dashboard.register_question');
+        return view('dashboard.question.register_question');
     }
+    public function updateQuestion(){
+        return view('dashboard.question.edit_question');
+    }
+
+
+
     public function teste(Request $request){
         $user = auth()->user()->questions;
-        dd($user->find(22)->delete());
+        $question = $user->find(69);
+        $question->update([
+            'question_text' => 'teste'
+        ]);
+
+        dd($question);
         // echo "hi";
         // dd($request->query('paginate'));
     }
