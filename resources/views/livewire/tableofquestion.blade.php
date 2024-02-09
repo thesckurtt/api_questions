@@ -17,7 +17,7 @@
                     <td class="d-flex justify-content-center" style="gap: 10px">
                         <a href="##" class="btn btn-success px-4" title="Informações"><i
                                 class="fa-solid fa-circle-info"></i></a>
-                        <a href="##" class="btn btn-warning px-4" title="Editar"><i
+                        <a href="{{ route('dashboard.updateQuestion', $question->id) }}" class="btn btn-warning px-4" title="Editar"><i
                                 class="fa-solid fa-pen-to-square"></i></a>
                         <a href="##" class="btn btn-danger px-4" wire:click='deleteQuestion({{$question->id}})' title="Excluir"><i
                                 class="fa-solid fa-trash"></i></a>

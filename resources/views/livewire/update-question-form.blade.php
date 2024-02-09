@@ -1,4 +1,4 @@
-<form wire:submit='updateQuestion'>
+<form wire:submit="updateQuestion">
     <div class="form-group">
         <label>Nome da questão</label>
         <input type="text" class="form-control" placeholder="lorem ipsum dolor sit amet?" wire:model='question_name'>

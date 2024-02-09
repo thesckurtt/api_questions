@@ -22,15 +22,21 @@ class UpdateQuestionForm extends Component
         $user = auth()->user()->questions;
         $question = $user->find($this->request);
 
-        $question->update([
-            'question_name' => $this->question_name,
-            'question_text' => $this->question_text,
-            'question_alternative_01' => $this->question_alternative_01,
-            'question_alternative_02' => $this->question_alternative_02,
-            'question_alternative_03' => $this->question_alternative_03,
-            'question_alternative_04' => $this->question_alternative_04,
-            'question_alternative_correct' => $this->question_alternative_correct,
-        ]);
+        try {
+            $question->update([
+                'question_name' => $this->question_name,
+                'question_text' => $this->question_text,
+                'question_alternative_01' => $this->question_alternative_01,
+                'question_alternative_02' => $this->question_alternative_02,
+                'question_alternative_03' => $this->question_alternative_03,
+                'question_alternative_04' => $this->question_alternative_04,
+                'question_alternative_correct' => $this->question_alternative_correct,
+            ]);
+
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+
     }
     public function render()
     {
